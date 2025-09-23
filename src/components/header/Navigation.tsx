@@ -136,7 +136,7 @@ const Navigation = () => {
                 {navItems
                   .find(item => item.name === activeDropdown)
                   ?.images.map((image, index) => (
-                  <div key={index} className="w-40 h-30 cursor-pointer group relative overflow-hidden">
+                  <div key={index} className="w-60 h-50 cursor-pointer group relative overflow-hidden">
                     <img 
                       src={image.src}
                       alt={image.alt}
