@@ -69,8 +69,7 @@ const products: Product[] = [
 const ProductCarousel = () => {
   return (
     <section className="w-full mb-16 px-6">
-      <div className="max-w-7xl mx-auto">
-        <Carousel
+      <Carousel
           opts={{
             align: "start",
             loop: false,
@@ -112,7 +111,6 @@ const ProductCarousel = () => {
           <CarouselPrevious className="hidden md:flex -left-12 border-none bg-transparent hover:bg-transparent h-8 w-8 rounded-none" />
           <CarouselNext className="hidden md:flex -right-12 border-none bg-transparent hover:bg-transparent h-8 w-8 rounded-none" />
         </Carousel>
-      </div>
     </section>
   );
 };
