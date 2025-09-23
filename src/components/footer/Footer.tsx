@@ -8,7 +8,7 @@ const Footer = () => {
             <img 
               src="/Linea_Jewelry_Inc-2.svg" 
               alt="Linea Jewelry Inc." 
-              className="mb-4 h-4 w-auto"
+              className="mb-4 h-6 w-auto"
             />
             <p className="text-sm font-light text-black/70 leading-relaxed max-w-md">
               Minimalist jewelry crafted for the modern individual
