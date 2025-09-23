@@ -46,8 +46,7 @@ const Navigation = () => {
         "Store Locator"
       ],
       images: [
-        { src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop", alt: "About Us 1" },
-        { src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=300&h=200&fit=crop", alt: "About Us 2" }
+        { src: "/founders.png", alt: "Company Founders", label: "Read our story" }
       ]
     }
   ];
@@ -142,7 +141,7 @@ const Navigation = () => {
                       alt={image.alt}
                       className="w-full h-full object-cover transition-opacity duration-200 group-hover:opacity-90"
                     />
-                    {(activeDropdown === "Shop" || activeDropdown === "New in") && (
+                    {(activeDropdown === "Shop" || activeDropdown === "New in" || activeDropdown === "About") && (
                       <div className="absolute bottom-2 left-2 text-white text-xs font-light flex items-center gap-1">
                         <span>{image.label}</span>
                         <ArrowRight size={12} />
