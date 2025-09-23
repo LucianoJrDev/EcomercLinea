@@ -80,7 +80,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-nav border-b border-border relative">
+    <nav className="bg-nav relative">
       <div className="flex items-center justify-between h-16 px-4">
         {/* Mobile hamburger button */}
         <button
