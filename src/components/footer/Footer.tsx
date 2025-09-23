@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="w-full bg-white text-black py-8 px-6 border-t border-black">
+    <footer className="w-full bg-white text-black py-4 px-6 border-t border-black">
       <div className="">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-8">
           {/* Brand - Left side */}
@@ -51,16 +51,16 @@ const Footer = () => {
       </div>
 
       {/* Bottom section - edge to edge separator */}
-      <div className="border-t border-black w-screen relative -mx-6 px-6 pt-4">
+      <div className="border-t border-black w-screen relative -mx-6 px-6 pt-2">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm font-light text-black/50 mb-2 md:mb-0">
+          <p className="text-sm font-light text-black mb-1 md:mb-0">
             © 2024 Linea. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-sm font-light text-black/50 hover:text-black transition-colors">
+            <a href="#" className="text-sm font-light text-black hover:text-black/70 transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-sm font-light text-black/50 hover:text-black transition-colors">
+            <a href="#" className="text-sm font-light text-black hover:text-black/70 transition-colors">
               Terms of Service
             </a>
           </div>
