@@ -11,7 +11,7 @@ const EditorialSection = () => {
 
         </p>
           <a href="#" className="inline-flex items-center gap-1 text-sm font-light text-foreground hover:text-foreground/80 transition-colors duration-200">
-            <span>Read more</span>
+            <span>Read our full story</span>
             <ArrowRight size={12} />
           </a>
         </div>
