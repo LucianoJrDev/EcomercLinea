@@ -1,7 +1,5 @@
 import { Search, User, ShoppingBag } from "lucide-react";
 import { useState } from "react";
-import ringsImage from "../assets/rings-collection.png";
-import earringsImage from "../assets/earrings-collection.png";
 
 const Navigation = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -18,8 +16,8 @@ const Navigation = () => {
         "Watches"
       ],
       images: [
-        { src: ringsImage, alt: "Rings Collection", label: "Rings" },
-        { src: earringsImage, alt: "Earrings Collection", label: "Earrings" }
+        { src: "/rings-collection.png", alt: "Rings Collection", label: "Rings" },
+        { src: "/earrings-collection.png", alt: "Earrings Collection", label: "Earrings" }
       ]
     },
     { 
