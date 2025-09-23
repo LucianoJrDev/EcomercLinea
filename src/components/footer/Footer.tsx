@@ -6,7 +6,7 @@ const Footer = () => {
           {/* Brand - Left side */}
           <div>
             <img 
-              src="/LINEA_JEWELRY_INC.svg" 
+              src="/Linea_Jewelry_Inc-2.svg" 
               alt="Linea Jewelry Inc." 
               className="mb-4 h-4 w-auto"
             />
