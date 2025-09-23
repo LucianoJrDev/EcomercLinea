@@ -139,6 +139,7 @@ const Navigation = () => {
                     <img 
                       src={image.src}
                       alt={image.alt}
+                      loading="eager"
                       className="w-full h-full object-cover transition-opacity duration-200 group-hover:opacity-90"
                     />
                     {(activeDropdown === "Shop" || activeDropdown === "New in" || activeDropdown === "About") && (
