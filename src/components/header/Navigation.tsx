@@ -1,4 +1,4 @@
-import { Search, User, ShoppingBag, ArrowRight, Heart, X } from "lucide-react";
+import { Search, User, ShoppingCart, ArrowRight, Heart, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Navigation = () => {
@@ -128,7 +128,7 @@ const Navigation = () => {
             aria-label="Shopping bag"
             onClick={() => setOffCanvasType('cart')}
           >
-            <ShoppingBag size={20} />
+            <ShoppingCart size={20} />
           </button>
         </div>
       </div>
