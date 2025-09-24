@@ -1,0 +1,161 @@
+import { Card, CardContent } from "@/components/ui/card";
+import pantheonImage from "@/assets/pantheon.jpg";
+import eclipseImage from "@/assets/eclipse.jpg";
+import haloImage from "@/assets/halo.jpg";
+import obliqueImage from "@/assets/oblique.jpg";
+import lintelImage from "@/assets/lintel.jpg";
+import shadowlineImage from "@/assets/shadowline.jpg";
+import organicEarring from "@/assets/organic-earring.png";
+import linkBracelet from "@/assets/link-bracelet.png";
+
+interface Product {
+  id: number;
+  name: string;
+  category: string;
+  price: string;
+  image: string;
+  isNew?: boolean;
+}
+
+// Extended product list for category page
+const products: Product[] = [
+  {
+    id: 1,
+    name: "Pantheon",
+    category: "Earrings",
+    price: "€285",
+    image: pantheonImage,
+    isNew: true,
+  },
+  {
+    id: 2,
+    name: "Eclipse",
+    category: "Bracelets",
+    price: "€320",
+    image: eclipseImage,
+  },
+  {
+    id: 3,
+    name: "Halo",
+    category: "Earrings",
+    price: "€195",
+    image: haloImage,
+    isNew: true,
+  },
+  {
+    id: 4,
+    name: "Oblique",
+    category: "Earrings",
+    price: "€165",
+    image: obliqueImage,
+  },
+  {
+    id: 5,
+    name: "Lintel",
+    category: "Earrings",
+    price: "€225",
+    image: lintelImage,
+  },
+  {
+    id: 6,
+    name: "Shadowline",
+    category: "Bracelets",
+    price: "€395",
+    image: shadowlineImage,
+  },
+  {
+    id: 7,
+    name: "Meridian",
+    category: "Earrings",
+    price: "€245",
+    image: pantheonImage,
+  },
+  {
+    id: 8,
+    name: "Vertex",
+    category: "Bracelets",
+    price: "€280",
+    image: eclipseImage,
+  },
+  {
+    id: 9,
+    name: "Apex",
+    category: "Earrings",
+    price: "€155",
+    image: haloImage,
+  },
+  {
+    id: 10,
+    name: "Zenith",
+    category: "Earrings",
+    price: "€185",
+    image: obliqueImage,
+  },
+  {
+    id: 11,
+    name: "Prism",
+    category: "Earrings",
+    price: "€205",
+    image: lintelImage,
+  },
+  {
+    id: 12,
+    name: "Radiant",
+    category: "Bracelets",
+    price: "€365",
+    image: shadowlineImage,
+  },
+];
+
+const ProductGrid = () => {
+  return (
+    <section className="w-full px-6 mb-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {products.map((product) => (
+            <Card 
+              key={product.id} 
+              className="border-none shadow-none bg-transparent group cursor-pointer"
+            >
+              <CardContent className="p-0">
+                <div className="aspect-square mb-3 overflow-hidden bg-muted/10 relative">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-all duration-300 group-hover:opacity-0"
+                  />
+                  <img
+                    src={product.category === "Earrings" ? organicEarring : linkBracelet}
+                    alt={`${product.name} lifestyle`}
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-black/[0.03]"></div>
+                  {product.isNew && (
+                    <div className="absolute top-2 left-2 px-2 py-1 text-xs font-medium text-black">
+                      NEW
+                    </div>
+                  )}
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm font-light text-foreground">
+                    {product.category}
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-sm font-medium text-foreground">
+                      {product.name}
+                    </h3>
+                    <p className="text-sm font-light text-foreground">
+                      {product.price}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProductGrid;
