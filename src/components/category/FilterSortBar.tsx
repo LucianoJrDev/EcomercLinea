@@ -29,7 +29,7 @@ const FilterSortBar = ({ onFiltersToggle, filtersOpen, onFiltersClose }: FilterS
   const [sortBy, setSortBy] = useState("featured");
 
   const categories = ["Earrings", "Bracelets", "Rings", "Necklaces"];
-  const priceRanges = ["Under €100", "€100 - €200", "€200 - €300", "Over €300"];
+  const priceRanges = ["Under €1,000", "€1,000 - €2,000", "€2,000 - €3,000", "Over €3,000"];
   const materials = ["Gold", "Silver", "Rose Gold", "Platinum"];
 
   return (
