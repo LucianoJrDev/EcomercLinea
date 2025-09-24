@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import Pagination from "./Pagination";
 import pantheonImage from "@/assets/pantheon.jpg";
 import eclipseImage from "@/assets/eclipse.jpg";
 import haloImage from "@/assets/halo.jpg";
@@ -105,6 +106,90 @@ const products: Product[] = [
     price: "€3,650",
     image: shadowlineImage,
   },
+  {
+    id: 13,
+    name: "Stellar",
+    category: "Earrings",
+    price: "€2,150",
+    image: pantheonImage,
+  },
+  {
+    id: 14,
+    name: "Cosmos",
+    category: "Bracelets",
+    price: "€2,950",
+    image: eclipseImage,
+  },
+  {
+    id: 15,
+    name: "Aurora",
+    category: "Earrings",
+    price: "€1,750",
+    image: haloImage,
+  },
+  {
+    id: 16,
+    name: "Nebula",
+    category: "Earrings",
+    price: "€1,850",
+    image: obliqueImage,
+  },
+  {
+    id: 17,
+    name: "Orbit",
+    category: "Earrings",
+    price: "€2,350",
+    image: lintelImage,
+  },
+  {
+    id: 18,
+    name: "Galaxy",
+    category: "Bracelets",
+    price: "€3,450",
+    image: shadowlineImage,
+  },
+  {
+    id: 19,
+    name: "Lunar",
+    category: "Earrings",
+    price: "€2,050",
+    image: pantheonImage,
+  },
+  {
+    id: 20,
+    name: "Solar",
+    category: "Bracelets",
+    price: "€3,150",
+    image: eclipseImage,
+  },
+  {
+    id: 21,
+    name: "Astral",
+    category: "Earrings",
+    price: "€1,650",
+    image: haloImage,
+  },
+  {
+    id: 22,
+    name: "Cosmic",
+    category: "Earrings",
+    price: "€1,950",
+    image: obliqueImage,
+  },
+  {
+    id: 23,
+    name: "Celestial",
+    category: "Earrings",
+    price: "€2,250",
+    image: lintelImage,
+  },
+  {
+    id: 24,
+    name: "Ethereal",
+    category: "Bracelets",
+    price: "€3,750",
+    image: shadowlineImage,
+  },
 ];
 
 const ProductGrid = () => {
@@ -152,6 +237,8 @@ const ProductGrid = () => {
             </Card>
           ))}
         </div>
+      
+      <Pagination />
     </section>
   );
 };
