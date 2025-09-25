@@ -1,4 +1,4 @@
-import organicEarring from "@/assets/organic-earring.png";
+import earringsCollection from "@/assets/earrings-collection.png";
 import linkBracelet from "@/assets/link-bracelet.png";
 
 const FiftyFiftySection = () => {
@@ -8,8 +8,8 @@ const FiftyFiftySection = () => {
         <div>
           <div className="w-full aspect-square mb-3 overflow-hidden">
             <img 
-              src={organicEarring} 
-              alt="Organic earring design" 
+              src={earringsCollection} 
+              alt="Earrings collection" 
               className="w-full h-full object-cover"
             />
           </div>
