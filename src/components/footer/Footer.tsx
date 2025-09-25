@@ -10,9 +10,23 @@ const Footer = () => {
               alt="Linea Jewelry Inc." 
               className="mb-4 h-6 w-auto"
             />
-            <p className="text-sm font-light text-black/70 leading-relaxed max-w-md">
+            <p className="text-sm font-light text-black/70 leading-relaxed max-w-md mb-6">
               Minimalist jewelry crafted for the modern individual
             </p>
+            
+            {/* Contact Information */}
+            <div className="space-y-2 text-sm font-light text-black/70">
+              <div>
+                <p className="font-normal text-black mb-1">Visit Us</p>
+                <p>123 Madison Avenue</p>
+                <p>New York, NY 10016</p>
+              </div>
+              <div>
+                <p className="font-normal text-black mb-1 mt-3">Contact</p>
+                <p>+1 (212) 555-0123</p>
+                <p>hello@lineajewelry.com</p>
+              </div>
+            </div>
           </div>
 
           {/* Link lists - Right side */}
