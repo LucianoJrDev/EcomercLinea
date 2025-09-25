@@ -1,15 +1,3 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-
-// Fix for default markers in react-leaflet v4
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-});
-
 interface Store {
   name: string;
   address: string;
@@ -48,41 +36,34 @@ const stores: Store[] = [
 
 const StoreMap = () => {
   return (
-    <div className="w-full h-96 rounded-lg overflow-hidden border border-border">
-      <MapContainer
-        center={[39.8283, -98.5795]} // Center of US
-        zoom={4}
-        style={{ height: '100%', width: '100%' }}
-        className="z-0"
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        
-        {stores.map((store, index) => (
-          <Marker key={index} position={[store.lat, store.lng]}>
-            <Popup className="font-light">
-              <div className="space-y-2 min-w-[200px]">
-                <h3 className="font-medium text-foreground">{store.name}</h3>
-                <p className="text-sm text-muted-foreground">{store.address}</p>
-                <p className="text-sm text-muted-foreground">{store.phone}</p>
-                <p className="text-sm text-muted-foreground">{store.hours}</p>
-                <div className="pt-2">
-                  <a 
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(store.address)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-primary hover:underline"
-                  >
-                    Get Directions →
-                  </a>
-                </div>
+    <div className="w-full h-96 rounded-lg overflow-hidden border border-border bg-muted/10 relative">
+      {/* Static Map using Google Maps Embed API */}
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12063.046788464958!2d-74.0059413!3d40.7489054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sus!4v1641234567890!5m2!1sen!2sus"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="w-full h-full"
+      />
+      
+      {/* Overlay with store markers */}
+      <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm rounded-lg p-4 max-w-xs">
+        <h4 className="text-sm font-medium text-foreground mb-3">Our Locations</h4>
+        <div className="space-y-2">
+          {stores.map((store, index) => (
+            <div key={index} className="text-xs">
+              <div className="flex items-center gap-2 mb-1">
+                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                <span className="font-medium text-foreground">{store.name}</span>
               </div>
-            </Popup>
-          </Marker>
-        ))}
-      </MapContainer>
+              <p className="text-muted-foreground ml-4">{store.address}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
