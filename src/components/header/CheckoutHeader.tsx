@@ -18,7 +18,7 @@ const CheckoutHeader = () => {
           {/* Center - Logo */}
           <Link to="/" className="flex-shrink-0">
             <img 
-              src="/LINEA_JEWELRY_INC.svg" 
+              src="/LINEA-1.svg" 
               alt="Linea Jewelry Inc" 
               className="h-6 w-auto"
             />
