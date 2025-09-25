@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ProductDescription = () => {
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [isCareOpen, setIsCareOpen] = useState(false);
+  const [isReviewsOpen, setIsReviewsOpen] = useState(false);
 
   return (
     <div className="space-y-0 mt-8 border-t border-border">
@@ -76,7 +77,7 @@ const ProductDescription = () => {
       </div>
 
       {/* Care Instructions */}
-      <div>
+      <div className="border-b border-border">
         <Button
           variant="ghost"
           onClick={() => setIsCareOpen(!isCareOpen)}
@@ -100,6 +101,105 @@ const ProductDescription = () => {
             <p className="text-sm font-light text-muted-foreground">
               For professional cleaning, visit your local jeweler or contact our customer service team.
             </p>
+          </div>
+        )}
+      </div>
+
+      {/* Customer Reviews */}
+      <div>
+        <Button
+          variant="ghost"
+          onClick={() => setIsReviewsOpen(!isReviewsOpen)}
+          className="w-full h-14 px-0 justify-between hover:bg-transparent font-light rounded-none"
+        >
+          <span>Customer Reviews</span>
+          <div className="flex items-center gap-2">
+            <div className="flex items-center">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <Star
+                  key={star}
+                  className={`h-3 w-3 ${
+                    star <= 4.8 ? 'fill-foreground text-foreground' : 'text-muted-foreground'
+                  }`}
+                />
+              ))}
+              <span className="text-sm font-light text-muted-foreground ml-1">4.8</span>
+            </div>
+            {isReviewsOpen ? (
+              <ChevronUp className="h-4 w-4" />
+            ) : (
+              <ChevronDown className="h-4 w-4" />
+            )}
+          </div>
+        </Button>
+        {isReviewsOpen && (
+          <div className="pb-6 space-y-6">
+            {/* Review Product Button */}
+            <Button 
+              variant="outline" 
+              className="w-full h-12 font-light rounded-none border-foreground text-foreground hover:bg-foreground hover:text-background"
+            >
+              Review Product
+            </Button>
+
+            {/* Reviews List */}
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star
+                        key={star}
+                        className="h-3 w-3 fill-foreground text-foreground"
+                      />
+                    ))}
+                  </div>
+                  <span className="text-sm font-light text-muted-foreground">Sarah M.</span>
+                </div>
+                <p className="text-sm font-light text-muted-foreground leading-relaxed">
+                  "Absolutely stunning earrings! The quality is exceptional and they go with everything. 
+                  The architectural design is so unique and I get compliments every time I wear them."
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star
+                        key={star}
+                        className={`h-3 w-3 ${
+                          star <= 4 ? 'fill-foreground text-foreground' : 'text-muted-foreground'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-sm font-light text-muted-foreground">Emma T.</span>
+                </div>
+                <p className="text-sm font-light text-muted-foreground leading-relaxed">
+                  "Beautiful craftsmanship and comfortable to wear all day. The gold plating has held up 
+                  perfectly after months of regular wear. Highly recommend!"
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star
+                        key={star}
+                        className="h-3 w-3 fill-foreground text-foreground"
+                      />
+                    ))}
+                  </div>
+                  <span className="text-sm font-light text-muted-foreground">Jessica R.</span>
+                </div>
+                <p className="text-sm font-light text-muted-foreground leading-relaxed">
+                  "These earrings are a work of art. The minimalist design is elegant and sophisticated. 
+                  Perfect weight and the packaging was beautiful too."
+                </p>
+              </div>
+            </div>
           </div>
         )}
       </div>
