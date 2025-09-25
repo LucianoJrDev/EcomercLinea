@@ -1,10 +1,19 @@
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import ProductImageGallery from "../components/product/ProductImageGallery";
 import ProductInfo from "../components/product/ProductInfo";
 import ProductDescription from "../components/product/ProductDescription";
 import ProductCarousel from "../components/content/ProductCarousel";
+import { 
+  Breadcrumb, 
+  BreadcrumbItem, 
+  BreadcrumbLink, 
+  BreadcrumbList, 
+  BreadcrumbPage, 
+  BreadcrumbSeparator 
+} from "@/components/ui/breadcrumb";
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -17,13 +26,25 @@ const ProductDetail = () => {
         <section className="w-full px-6">
           {/* Breadcrumb - Show above image on smaller screens */}
           <div className="lg:hidden mb-6">
-            <div className="text-sm font-light text-muted-foreground">
-              <span>Home</span>
-              <span className="mx-2">/</span>
-              <span>Earrings</span>
-              <span className="mx-2">/</span>
-              <span className="text-foreground font-normal">Pantheon</span>
-            </div>
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/">Home</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/category/earrings">Earrings</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Pantheon</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">

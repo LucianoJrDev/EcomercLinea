@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,10 +17,20 @@ const CategoryHeader = ({ category }: CategoryHeaderProps) => {
   
   return (
     <section className="w-full px-6 mb-8">
-        <div className="text-sm font-light text-muted-foreground mb-6">
-          <span>Home</span>
-          <span className="mx-2">/</span>
-          <span className="text-foreground font-normal">{capitalizedCategory}</span>
+        <div className="mb-6">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{capitalizedCategory}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
         </div>
         
         <div>

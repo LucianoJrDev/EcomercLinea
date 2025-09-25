@@ -1,5 +1,14 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { 
+  Breadcrumb, 
+  BreadcrumbItem, 
+  BreadcrumbLink, 
+  BreadcrumbList, 
+  BreadcrumbPage, 
+  BreadcrumbSeparator 
+} from "@/components/ui/breadcrumb";
 import { Minus, Plus } from "lucide-react";
 
 const ProductInfo = () => {
@@ -11,12 +20,26 @@ const ProductInfo = () => {
   return (
     <div className="space-y-6">
       {/* Breadcrumb - Show only on desktop */}
-      <div className="hidden lg:block text-sm font-light text-muted-foreground">
-        <span>Home</span>
-        <span className="mx-2">/</span>
-        <span>Earrings</span>
-        <span className="mx-2">/</span>
-        <span className="text-foreground font-normal">Pantheon</span>
+      <div className="hidden lg:block">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/category/earrings">Earrings</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Pantheon</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
       </div>
 
       {/* Product title and price */}
