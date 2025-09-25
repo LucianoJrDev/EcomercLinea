@@ -25,15 +25,15 @@ const ProductDetail = () => {
           </div>
         </section>
         
-        <section className="w-full px-6">
-          <div className="mb-4">
+        <section className="w-full">
+          <div className="mb-4 px-6">
             <h2 className="text-sm font-light text-foreground">You might also like</h2>
           </div>
           <ProductCarousel />
         </section>
         
-        <section className="w-full px-6">
-          <div className="mb-4">
+        <section className="w-full">
+          <div className="mb-4 px-6">
             <h2 className="text-sm font-light text-foreground">Our other Earrings</h2>
           </div>
           <ProductCarousel />
