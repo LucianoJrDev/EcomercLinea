@@ -50,7 +50,7 @@ const ProductInfo = () => {
         </div>
         
         <div className="space-y-2">
-          <h3 className="text-sm font-light text-foreground">Editors notes</h3>
+          <h3 className="text-sm font-light text-foreground">Editor's notes</h3>
           <p className="text-sm font-light text-muted-foreground italic">"A modern interpretation of classical architecture, these earrings bridge timeless elegance with contemporary minimalism."</p>
         </div>
       </div>
