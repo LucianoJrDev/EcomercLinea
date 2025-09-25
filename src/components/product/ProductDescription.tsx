@@ -127,8 +127,8 @@ const ProductDescription = () => {
           onClick={() => setIsReviewsOpen(!isReviewsOpen)}
           className="w-full h-14 px-0 justify-between hover:bg-transparent font-light rounded-none"
         >
-          <span>Customer Reviews</span>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
+            <span>Customer Reviews</span>
             <div className="flex items-center">
               {[1, 2, 3, 4, 5].map((star) => (
                 <CustomStar
@@ -138,12 +138,12 @@ const ProductDescription = () => {
               ))}
               <span className="text-sm font-light text-muted-foreground ml-1">4.8</span>
             </div>
-            {isReviewsOpen ? (
-              <ChevronUp className="h-4 w-4" />
-            ) : (
-              <ChevronDown className="h-4 w-4" />
-            )}
           </div>
+          {isReviewsOpen ? (
+            <ChevronUp className="h-4 w-4" />
+          ) : (
+            <ChevronDown className="h-4 w-4" />
+          )}
         </Button>
         {isReviewsOpen && (
           <div className="pb-6 space-y-6">
